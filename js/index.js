@@ -1,11 +1,9 @@
-const refs = {
-    days: document.querySelector('[data-value="days"]'),
-    hours: document.querySelector('[data-value="hours"]'),
-    mins: document.querySelector('[data-value="mins"]'),
-    secs: document.querySelector('[data-value="secs"]'),
-    value: document.querySelectorAll(".value"),
-  };
-  
+  const daysRef = document.querySelector('[data-value="days"]');
+  const hoursRef = document.querySelector('[data-value="hours"]');
+  const minsRef = document.querySelector('[data-value="mins"]');
+  const secsRef = document.querySelector('[data-value="secs"]');
+  const titleRef = document.querySelector('#title');
+
   class CountdownTimer {
     constructor({ onTick, selector, targetDate }) {
       this.intervalId = null;
@@ -52,10 +50,10 @@ const refs = {
   });
   
   countdownTimer.start();
-  
-  function updateTimer({ days, hours, mins, secs }) {
-    refs.days.textContent = `${days}`;
-    refs.hours.textContent = `${hours}`;
-    refs.mins.textContent = `${mins}`;
-    refs.secs.textContent = `${secs}`;
-  }
+
+function updateTimer({ days, hours, mins, secs }) {
+daysRef.textContent = `${days}`;
+hoursRef.textContent = `${hours}`;
+minsRef.textContent = `${mins}`;
+secsRef.textContent = `${secs}`;
+}
